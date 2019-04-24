@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     CameraSource cameraSource;
     CameraView cameraView;
-    Button btnDetect;
+    ImageButton btnDetect;
     android.app.AlertDialog waitingDialog;
 
     @Override
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         cameraView = findViewById(R.id.cameraview);
-        btnDetect = findViewById(R.id.btn_detect);
+        btnDetect = findViewById(R.id.imgbtn_detect);
         waitingDialog = new SpotsDialog.Builder()
                 .setContext(this)
                 .setMessage("Please Wait")
@@ -73,6 +74,11 @@ public class MainActivity extends AppCompatActivity {
                 cameraView.captureImage();
             }
         });
+
+        //Takes the language and according to that we redirect it to preferred language file
+        Intent intent = getIntent();
+        String Language = intent.getStringExtra("Language");
+
 
         cameraView.addCameraKitListener(new CameraKitEventListener() {
             @Override
