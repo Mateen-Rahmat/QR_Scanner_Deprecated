@@ -7,14 +7,18 @@
     tools:context=".MainActivity">
 
     <com.wonderkiln.camerakit.CameraView
-        android:layout_width="match_parent"
         android:id="@+id/cameraview"
-        android:layout_height="match_parent"></com.wonderkiln.camerakit.CameraView>
-
-    <Button
-        android:id="@+id/btn_detect"
-        android:text="Detect"
-        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"></com.wonderkiln.camerakit.CameraView>
+
+    <ImageButton
+        android:id="@+id/imgbtn_detect"
+        android:layout_width="133dp"
+        android:layout_height="106dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/logo" />
 </RelativeLayout>
